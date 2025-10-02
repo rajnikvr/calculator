@@ -34,7 +34,7 @@ const App = () => {
         const evalResult = eval(expr);
 
         if (evalResult === Infinity || isNaN(evalResult)) {
-          setResult("Ghar Bheginu Thane😂"); // custom error message
+          setResult("Bas Ne🙂"); // custom error message
         } else {
           setResult(evalResult.toString());
         }
