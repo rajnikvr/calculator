@@ -32,14 +32,20 @@ const App = () => {
           .replace(/1\/x/g, '1/');
 
         const evalResult = eval(expr);
-        setResult(evalResult.toString());
+
+        if (evalResult === Infinity || isNaN(evalResult)) {
+          setResult("Ghar Bheginu Thane😂"); // custom error message
+        } else {
+          setResult(evalResult.toString());
+        }
       } else {
         setResult('');
       }
     } catch (e) {
-      setResult('');
+      setResult(''); // custom error message
     }
   }, [input]);
+
 
   const handlePress = (btn) => {
     Vibration.vibrate(10); // vibrate for 10ms
